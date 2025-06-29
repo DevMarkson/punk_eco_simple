@@ -99,18 +99,24 @@ def create_app(config_name='development'):
     
     # Configuration du contexte de l'application
     with app.app_context():
-        # Création des tables de la base de données
-        db.create_all()
+        # Création des tables de la base de données sera gérée par Flask-Migrate
+        # db.create_all()  # Commenté pour utiliser les migrations
         
-        # Initialisation des données de base
-        initialize_database()
+        # Initialisation des données de base (sera faite plus tard)
+        # initialize_database()  # Commenté temporairement
         
         # Initialisation du tableau de bord Dash
         from app.dash_apps.ma_economy_dash import init_dash
         app = init_dash(app)
         
-        # Initialisation des tâches planifiées
-        initialize_scheduled_tasks(app)
+        # Initialisation des tâches planifiées (temporairement commenté)
+        # initialize_scheduled_tasks(app)
+    
+    # Injecter des variables globales dans tous les templates
+    @app.context_processor
+    def inject_now():
+        from datetime import datetime
+        return {'now': datetime.utcnow()}
     
     # Enregistrement des gestionnaires d'erreurs
     app.register_error_handler(400, bad_request)

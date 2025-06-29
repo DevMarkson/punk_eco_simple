@@ -49,7 +49,7 @@ setup(
     python_requires='>=3.8',
     install_requires=read_requirements(),
     extras_require={
-        'dev': read_requirements('requirements-dev.txt'),
+        'dev': read_requirements() + read_requirements('requirements-dev.txt'),
     },
     classifiers=[
         "Development Status :: 3 - Alpha",

@@ -4,7 +4,6 @@ Ce module contient les routes de base comme la page d'accueil, la page à propos
 """
 
 from flask import Blueprint, render_template, current_app
-from flask_login import login_required
 
 # Créer le blueprint
 main_bp = Blueprint('main', __name__)
@@ -20,13 +19,11 @@ def about():
     return render_template('main/about.html')
 
 @main_bp.route('/dashboard')
-@login_required
 def dashboard():
     """Affiche le tableau de bord utilisateur."""
     return render_template('main/dashboard.html')
 
 @main_bp.route('/economy')
-@login_required
 def economy_dashboard():
     """Affiche le tableau de bord économique marocain."""
     # Vérifier si le tableau de bord est activé dans la configuration

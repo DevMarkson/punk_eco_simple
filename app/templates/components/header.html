@@ -36,25 +36,10 @@
                             <span>Explorateur</span>
                         </a>
                     </li>
-                    {% if current_user.is_authenticated %}
-                    <li class="nav-item mobile-only">
-                        <a href="{{ url_for('auth.logout') }}" class="nav-link" data-page="logout">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span>Déconnexion</span>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item mobile-only">
-                        <a href="{{ url_for('auth.login') }}" class="nav-link" data-page="login">
-                            <i class="fas fa-sign-in-alt"></i>
-                            <span>Connexion</span>
-                        </a>
-                    </li>
-                    {% endif %}
                 </ul>
             </nav>
             
-            <!-- Contrôles du thème et utilisateur -->
+            <!-- Contrôles du thème -->
             <div class="header-controls">
                 <!-- Bouton de bascule du thème -->
                 <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
@@ -62,31 +47,6 @@
                     <i class="fas fa-sun sun-icon"></i>
                     <span class="sr-only">Changer de thème</span>
                 </button>
-                
-                {% if current_user.is_authenticated %}
-                <!-- Menu utilisateur (version desktop) -->
-                <div class="user-menu desktop-only">
-                    <div class="user-avatar">{{ current_user.username[0]|upper }}</div>
-                    <div class="user-info">
-                        <span class="user-name">{{ current_user.username }}</span>
-                        <a href="{{ url_for('auth.logout') }}" class="user-logout" title="Déconnexion" aria-label="Déconnexion">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                {% else %}
-                <!-- Boutons d'authentification (version desktop) -->
-                <div class="auth-buttons desktop-only">
-                    <a href="{{ url_for('auth.login') }}" class="btn btn-sm btn-outline">
-                        <i class="fas fa-sign-in-alt"></i>
-                        <span>Connexion</span>
-                    </a>
-                    <a href="{{ url_for('auth.register') }}" class="btn btn-sm btn-primary">
-                        <i class="fas fa-user-plus"></i>
-                        <span>S'inscrire</span>
-                    </a>
-                </div>
-                {% endif %}
             </div>
         </div>
     </div>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}À propos - Punk Eco{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title">À propos de Punk Eco</h1>
+                </div>
+                <div class="card-body">
+                    <h2>Mission</h2>
+                    <p>Punk Eco est un tableau de bord économique intelligent dédié au suivi et à l'analyse des indicateurs économiques marocains. Notre mission est de fournir une vue d'ensemble claire et accessible de l'économie nationale.</p>
+
+                    <h2>Fonctionnalités</h2>
+                    <ul>
+                        <li><strong>Tableau de bord interactif</strong> avec les indicateurs économiques clés</li>
+                        <li><strong>Authentification utilisateur</strong> avec gestion des rôles</li>
+                        <li><strong>API REST</strong> pour l'accès aux données économiques</li>
+                        <li><strong>Visualisations avancées</strong> avec Plotly/Dash</li>
+                        <li><strong>Export de données</strong> en CSV, Excel et JSON</li>
+                        <li><strong>Recherche avancée</strong> et filtrage des indicateurs</li>
+                        <li><strong>Alertes</strong> pour les variations significatives d'indicateurs</li>
+                    </ul>
+
+                    <h2>Technologies</h2>
+                    <p>Cette application est construite avec :</p>
+                    <ul>
+                        <li>Flask (Python) - Framework web</li>
+                        <li>SQLAlchemy - ORM pour la base de données</li>
+                        <li>Plotly/Dash - Visualisations interactives</li>
+                        <li>Bootstrap - Interface utilisateur</li>
+                        <li>SQLite/PostgreSQL - Base de données</li>
+                    </ul>
+
+                    <h2>Version</h2>
+                    <p>Version actuelle : <code>0.1.0</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
